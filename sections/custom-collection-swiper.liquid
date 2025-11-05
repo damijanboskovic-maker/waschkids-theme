@@ -1,0 +1,261 @@
+<section id="collection-swiper-section" class="collection-swiper-section">
+
+
+
+  <div class="collection-swiper-container">
+
+    <h2 class="collection-swiper-title">
+      {{ section.settings.title | escape }}
+    </h2>
+
+    <div class="swiper my-collection-swiper">
+      <div class="swiper-wrapper">
+        {% if section.settings.collection %}
+          {% assign my_collection = collections[section.settings.collection] %}
+          {% if my_collection %}
+            {% for product in my_collection.products %}
+              <div class="swiper-slide collection-product-slide">
+                <div class="product-item">
+                  <!-- Produktbild -->
+                  <a href="{{ product.url | within: my_collection }}" class="product-image-link">
+                    {% if product.featured_image %}
+                      <img 
+                        src="{{ product.featured_image | image_url: width: 600 }}" 
+                        alt="{{ product.featured_image.alt | escape }}" 
+                        class="product-image"
+                        loading="lazy"
+                        width="600"
+                        height="600"
+                      />
+                    {% endif %}
+                  </a>
+                  <!-- Titel -->
+                  <div class="product-title">
+                    <a href="{{ product.url | within: my_collection }}">
+                      {{ product.title | escape }}
+                    </a>
+                  </div>
+                  <!-- Preis -->
+                  <div class="product-price">
+                    {{ product.price | money }}
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% else %}
+          <p>Please select a collection in the theme editor.</p>
+        {% endif %}
+      </div>
+
+      <div class="collection-swiper-pagination"></div>
+    </div>
+
+    <div class="collection-swiper-button-prev swiper-button-prev2"></div>
+    <div class="collection-swiper-button-next swiper-button-next2"></div>
+  </div>
+
+  <style>
+    .collection-swiper-section {
+      padding: 20px 0;
+      width: 100%;
+    }
+
+    .collection-swiper-title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .collection-swiper-container {
+      max-width: 1800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .swiper.my-collection-swiper {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .swiper-slide.collection-product-slide {
+      display: flex;
+      justify-content: center;
+    }
+
+    .product-item {
+      text-align: center;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .product-image-link {
+      position: relative;
+      width: 100%;
+      padding-top: 125%; /* Portrait Verhältnis 4:5 */
+      overflow: hidden;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .product-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Kein Abschneiden */
+      object-position: center;
+      display: block;
+    }
+
+    .product-title {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .product-title a {
+      text-decoration: none;
+    }
+
+    .product-price {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .collection-swiper-button-next,
+    .collection-swiper-button-prev {
+      color: #000;
+    }
+
+    .collection-swiper-pagination {
+      margin-top: 25px;
+    }
+
+    .swiper-pagination-bullet {
+      background: #666;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #3f6ba4;
+    }
+
+    .swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+    .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+      position: relative;
+    }
+
+    .collection-swiper-button-next, .collection-swiper-button-prev {
+      position: absolute;
+      top: 50%;
+      width: calc(var(--swiper-navigation-size) / 44 * 27);
+      height: var(--swiper-navigation-size);
+      margin-top: calc(0px - var(--swiper-navigation-size) / 2);
+      z-index: 10;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #3f6ba4;
+    }
+
+    .collection-swiper-button-prev {
+      left: 10px;
+    }
+
+    .collection-swiper-button-next {
+      right: 10px;
+    }
+
+    .collection-swiper-button-next::after {
+      content: 'next';
+    }
+
+    .collection-swiper-button-prev::after {
+      content: 'prev';
+    }
+
+    .collection-swiper-button-next::after,
+    .collection-swiper-button-prev::after {
+      font-family: swiper-icons;
+      font-size: var(--swiper-navigation-size);
+      text-transform: none !important;
+      letter-spacing: 0;
+      font-variant: initial;
+      line-height: 1;
+    }
+
+    @media (max-width: 768px) {
+      .collection-swiper-button-next,
+      .collection-swiper-button-prev {
+        display: none;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var swiper = new Swiper('.my-collection-swiper', {
+        slidesPerView: 2,
+        spaceBetween: 10,
+        loop: false,
+        pagination: {
+          el: '.collection-swiper-pagination',
+          clickable: true,
+          dynamicBullets: true,
+        },
+        navigation: {
+          nextEl: '.collection-swiper-button-next',
+          prevEl: '.collection-swiper-button-prev',
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+            grid: {
+              rows: 2,
+              fill: 'row'
+            }
+          },
+          576: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          992: {
+            slidesPerView: 4,
+            spaceBetween: 20
+          }
+        }
+      });
+    });
+  </script>
+<section >
+  
+</section>
+
+</section>
+
+{% schema %}
+{
+  "name": "Collection Swiper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Our Products"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Choose a collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Swiper"
+    }
+  ]
+}
+{% endschema %}

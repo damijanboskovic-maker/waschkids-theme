@@ -1,0 +1,248 @@
+{% schema %}
+{
+  "name": "Kategorie Grid",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Bild 1"
+    },
+    {
+      "type": "url",
+      "id": "link_1",
+      "label": "Link 1"
+    },
+    {
+      "type": "text",
+      "id": "label_1",
+      "label": "Bezeichnung 1",
+      "default": "Aussenreinigung"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Bild 2"
+    },
+    {
+      "type": "url",
+      "id": "link_2",
+      "label": "Link 2"
+    },
+    {
+      "type": "text",
+      "id": "label_2",
+      "label": "Bezeichnung 2",
+      "default": "Versiegelung"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Bild 3"
+    },
+    {
+      "type": "url",
+      "id": "link_3",
+      "label": "Link 3"
+    },
+    {
+      "type": "text",
+      "id": "label_3",
+      "label": "Bezeichnung 3",
+      "default": "Innenraum"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Bild 4"
+    },
+    {
+      "type": "url",
+      "id": "link_4",
+      "label": "Link 4"
+    },
+    {
+      "type": "text",
+      "id": "label_4",
+      "label": "Bezeichnung 4",
+      "default": "Polieren"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kategorie Grid"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .category-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 10px;
+    flex-wrap: nowrap;
+    align-items: stretch;
+  }
+  .category-item {
+    position: relative;
+    flex: 1 1 24%;
+    min-height: 250px;
+    max-height: 280px;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: block !important;
+    will-change: transform, opacity;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+  }
+  .category-item:nth-child(1) { animation-delay: 0.1s; }
+  .category-item:nth-child(2) { animation-delay: 0.3s; }
+  .category-item:nth-child(3) { animation-delay: 0.5s; }
+  .category-item:nth-child(4) { animation-delay: 0.7s; }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .category-item:hover {
+    transform: scale(1.05) rotateX(5deg) rotateY(-5deg);
+    box-shadow: 0 15px 30px rgba(255, 0, 85, 0.6);
+    z-index: 10;
+  }
+  .category-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(1);
+    transition: filter 0.4s ease, transform 0.4s ease;
+    display: block;
+    border-radius: 16px;
+    pointer-events: none;
+    user-select: none;
+    position: relative;
+    z-index: 1;
+  }
+  .category-item:hover img {
+    filter: brightness(1.1);
+  }
+  .category-item::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      120deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.3) 50%,
+      rgba(255,255,255,0) 100%
+    );
+    transform: rotate(25deg);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 5;
+  }
+  .category-item:hover::before {
+    opacity: 1;
+    animation: shineMove 2s infinite;
+  }
+  @keyframes shineMove {
+    0% {
+      transform: translateX(-100%) rotate(25deg);
+    }
+    100% {
+      transform: translateX(100%) rotate(25deg);
+    }
+  }
+
+  .category-label {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: 'Permanent Marker', cursive, !important;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 4px 12px;
+    border-radius: 12px;
+    pointer-events: none;
+    user-select: none;
+    z-index: 10;
+  }
+
+  /* Laptop und größer: Breitere, größere Kacheln in zwei Reihen */
+  @media (min-width: 1024px) {
+    .category-grid {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .category-item {
+      flex: 0 1 45%;
+      min-height: 320px;
+      max-height: 350px;
+      margin-bottom: 20px;
+    }
+  }
+
+  /* Mobile Ansicht unverändert */
+  @media (max-width: 768px) {
+    .category-grid {
+      flex-direction: column;
+      gap: 15px;
+      max-width: 100%;
+      padding: 0 20px;
+      flex-wrap: wrap;
+    }
+    .category-item {
+      flex: 1 1 100%;
+      max-width: 100%;
+      height: auto;
+      min-width: auto;
+      animation-delay: 0 !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .category-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover !important;
+      object-position: center !important;
+      transform: none !important;
+    }
+  }
+</style>
+
+<div class="category-grid">
+  {% for i in (1..4) %}
+    {% assign img_key = "image_" | append: i %}
+    {% assign link_key = "link_" | append: i %}
+    {% assign label_key = "label_" | append: i %}
+
+    {% assign img = section.settings[img_key] %}
+    {% assign link = section.settings[link_key] %}
+    {% assign label = section.settings[label_key] %}
+
+    {% if img and link %}
+      <a href="{{ link }}" class="category-item" aria-label="{{ label }}">
+        <img src="{{ img | img_url: 'master' }}" alt="{{ label }}" loading="lazy" />
+        <div class="category-label">{{ label }}</div>
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>

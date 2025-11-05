@@ -1,0 +1,189 @@
+{{ 'bundle-feature-collection.css' | asset_url | stylesheet_tag }}
+
+<div class="bundle-feature-collection-main" style="background:{{ section.settings.bg_color }};">
+
+  <div class="bundle_item">
+    <div class="bundle_item_image">
+      <img src="{{ section.settings.image | image_url }}" width="auto" height="auto" alt="image">
+    </div>
+    <div class="bundle_item_content">
+        <div class="container">
+          <div class="bundle_item_flex">
+            {% if section.settings.heading != blank %}
+              <h2 class="bundle_item_heading" style="color:{{ section.settings.text_color }};">{{ section.settings.heading }}</h2>
+            {% endif %}
+            {% if section.settings.content != blank %}
+              <div class="bundle_item_info" style="color:{{ section.settings.text_color }};">{{ section.settings.content }}</div>
+            {% endif %}
+            {% if section.settings.btn_name != blank %}
+              <span class="bundle_item_btn_name" style="color:{{ section.settings.btn_text_color }};background:{{ section.settings.btn_bg_color }};">
+                {{ section.settings.btn_name }}
+              </span>
+            {% endif %}
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="bundle_feature_items">
+    <div class="container">
+      <div class="bundle_feature_grid">
+        {% for block in section.blocks %}
+          {% assign product = block.settings.product %}
+          <div class="bundle_grid_item">
+            <div class="bundle_grid_item_img">
+              <img src="{{ product.featured_image | image_url }}" width="auto" height="auto" alt="{{ product.title }}">
+            </div>
+            <h3 class="bundle_grid_item_title" style="color:{{ section.settings.text_color }};">{{ product.title }}</h3>
+            <div class="bundle_grid_item_atc">
+              <span class="bundle_grid_item_btn {% if product.available == false %}disabled_btn{% endif %}" 
+                product_id="{{ product.selected_or_first_available_variant.id }}" 
+                style="color:{{ section.settings.btn_text_color }};background:{{ section.settings.btn_bg_color }};">
+                {% if product.available %}Add To Cart{% else %}Sold Out{% endif %}
+              </span>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('.bundle_grid_item_btn ').click(function(){
+          var _this = $(this);
+          _this.addClass('active');
+          var product_id = parseInt($(this).attr('product_id'));
+          const data = {
+              id: product_id,
+              quantity: 1
+          };
+          fetch('/cart/add.js', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
+          })
+          .then(response => response.json())
+          .then(response => {
+            const this_cartDrawer = document.querySelector('cart-drawer');
+            this_cartDrawer.refresh(true);
+            _this.removeClass('active');
+          })
+          .catch(error => {
+              console.error('Error adding product to cart:', error);
+          });
+    });
+
+    $('.bundle_item_btn_name').click(function () {
+          var _this = $(this);
+          _this.addClass('active');
+          var products = [];
+          $('.bundle_grid_item_btn').each(function () {
+              if(!$(this).hasClass('disabled_btn')){
+                 products.push({
+                      id: parseInt($(this).attr('product_id')),
+                      quantity: 1
+                  }); 
+              }
+          });
+      
+          const data = {
+              items: products
+          };
+      
+          fetch('/cart/add.js', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
+          })
+          .then(response => response.json())
+          .then(response => {
+              const this_cartDrawer = document.querySelector('cart-drawer');
+              this_cartDrawer.refresh(true);
+              _this.removeClass('active');
+          })
+          .catch(error => {
+              console.error('Error adding product to cart:', error);
+          });
+    });
+
+    
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Bundle Feature Collection",
+    "max_blocks": 6,
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      },
+      {
+        "type": "color",
+        "id":"text_color",
+        "label":"Text Color",
+        "default":"#000"
+      },
+      {
+        "type": "text",
+        "id": "btn_name",
+        "label": "Button Name",
+        "info":"This button will automatically bundle the products of the blocks."
+      },
+      {
+        "type": "color",
+        "id": "btn_bg_color",
+        "label": "Button Background Color",
+        "default":"#fff"
+      },
+      {
+        "type": "color",
+        "id": "btn_text_color",
+        "label": "Button Text Color",
+        "default":"#000"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name":"product",
+        "settings": [
+          {
+            "type": "product",
+            "id":"product",
+            "label":"product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Bundle Feature Collection"
+      }
+    ]
+  }
+{% endschema %}

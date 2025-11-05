@@ -1,0 +1,227 @@
+<!-- Google Font Link (einmalig in theme.liquid im <head> einfügen) -->
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+<style>
+  .comic-grid-wrapper {
+    max-width: 900px;
+    margin: 40px auto 20px auto;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive, sans-serif;
+  }
+
+  .comic-grid-title {
+    font-size: clamp(2.5rem, 7vw, 3.5rem);
+    color: #ff0055;
+    background: linear-gradient(45deg, #ff0055, #ff66b2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      2px 2px 0 #000,
+      4px 4px 8px rgba(255,0,85,0.7);
+    letter-spacing: 0.15em;
+    margin-bottom: 25px;
+    font-weight: 900;
+    user-select: none;
+    position: relative;
+    animation: glow 2.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    0% {
+      text-shadow:
+        2px 2px 0 #000,
+        4px 4px 8px rgba(255,0,85,0.5);
+    }
+    100% {
+      text-shadow:
+        2px 2px 0 #000,
+        4px 4px 15px rgba(255,0,85,1),
+        0 0 10px #ff66b2;
+    }
+  }
+
+  .comic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+    justify-content: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    border-radius: 20px;
+    position: relative;
+    background: #ffe6f0;
+    box-shadow: 0 8px 20px rgba(255, 0, 85, 0.3);
+  }
+
+  .comic-grid::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(#ff66b2 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.15;
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .comic-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border: 6px solid #ff0055;
+    box-shadow: 5px 5px 0 #000;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    background: white;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    filter: grayscale(0%);
+    will-change: transform;
+  }
+
+  .comic-frame:hover {
+    filter: grayscale(0%);
+    box-shadow: 0 0 15px #ff0055, 0 0 30px #ff3399;
+    z-index: 10;
+  }
+
+  .comic-frame-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
+  }
+
+  .comic-frame:hover .comic-frame-inner {
+    /* 3D Tilt via JS */
+  }
+
+  .comic-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 80% center;
+    display: block;
+    pointer-events: auto;
+    user-select: none;
+  }
+
+  .comic-frame .caption {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff0055cc;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 16px;
+    font-weight: 900;
+    font-family: 'Permanent Marker', cursive, sans-serif;
+    font-size: 1.1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    z-index: 20;
+  }
+
+  .comic-frame:hover .caption {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  @media (max-width: 767px) {
+    .comic-grid {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 30px 20px;
+    }
+  }
+</style>
+
+<div class="comic-grid-wrapper">
+  <div class="comic-grid-title">Prime Picks</div>
+  <div class="comic-grid">
+    <div class="comic-frame" title="Innenraum-Boost" style="--tiltX: 0deg; --tiltY: 0deg;">
+      <div class="comic-frame-inner">
+        <a href="https://waschkids.de/products/koch-chemie-refreshcockpitcare-0-5l-cockpitpflege" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.shopify.com/s/files/1/0642/4831/6068/files/FO313CEBDDA43_4_-04.jpg?v=1748663254" alt="Innenraum-Boost" style="object-position: 80% center;" />
+          <div class="caption">Innenraum-Boost</div>
+        </a>
+      </div>
+    </div>
+    <div class="comic-frame" title="Superheld fürs Leder" style="--tiltX: 0deg; --tiltY: 0deg;">
+      <div class="comic-frame-inner">
+        <a href="https://waschkids.de/products/sonax-premiumclass-lederpflegeset-7-stuck-lederpflege" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.shopify.com/s/files/1/0642/4831/6068/files/FO313CEBDDA43_4_-03.jpg?v=1748663234" alt="Superheld fürs Leder" />
+          <div class="caption">Superheld fürs Leder</div>
+        </a>
+      </div>
+    </div>
+    <div class="comic-frame" title="Felgen-Pro" style="--tiltX: 0deg; --tiltY: 0deg;">
+      <div class="comic-frame-inner">
+        <a href="https://waschkids.de/products/sonax-felgenburste" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.shopify.com/s/files/1/0642/4831/6068/files/FO313CEBDDA43_4_-05.jpg?v=1748663217" alt="Felgen-Pro" />
+          <div class="caption">Felgen-Pro</div>
+        </a>
+      </div>
+    </div>
+    <div class="comic-frame" title="Shampoo-Boost" style="--tiltX: 0deg; --tiltY: 0deg;">
+      <div class="comic-frame-inner">
+        <a href="https://waschkids.de/products/sonax-xtreme-richfoam-shampoo-1l-aussenreinigung" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.shopify.com/s/files/1/0642/4831/6068/files/FO313CEBDDA43_4_-02.jpg?v=1748663009" alt="Shampoo-Boost" />
+          <div class="caption">Shampoo-Boost</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 3D Tilt Effekt
+  document.querySelectorAll('.comic-frame').forEach(frame => {
+    frame.addEventListener('mousemove', e => {
+      const rect = frame.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -10;
+      const rotateY = ((x - centerX) / centerX) * 10;
+      frame.style.setProperty('--tiltX', `${rotateX}deg`);
+      frame.style.setProperty('--tiltY', `${rotateY}deg`);
+    });
+    frame.addEventListener('mouseleave', () => {
+      frame.style.setProperty('--tiltX', `0deg`);
+      frame.style.setProperty('--tiltY', `0deg`);
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Comic Image Grid",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Comic Image Grid"
+    }
+  ]
+}
+{% endschema %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

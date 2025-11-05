@@ -1,0 +1,234 @@
+{% if article.metafields.custom.produktempfehlungen != blank %}
+    <section id="custom-blog-product-swiper-section" class="custom-blog-product-swiper-section">
+    
+      <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+      
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      
+      <div class="custom-blog-product-swiper-container">
+    
+        <h2 class="custom-blog-product-swiper-title">
+          {{ section.settings.title | escape }}
+        </h2>
+    
+        <!-- Swiper wrapper -->
+        <div class="swiper my-custom-blog-product-swiper">
+          <div class="swiper-wrapper">
+    
+              {% assign produktempfehlungen = article.metafields.custom.produktempfehlungen %}
+
+                {% for product in produktempfehlungen.value %}
+                  <div class="swiper-slide custom-blog-product-slide">
+                    <div class="custom-product-item">
+                      <!-- Product image -->
+                      <a href="{{ product.url }}" class="custom-product-image-link">
+                        {% if product.featured_image %}
+                          <img 
+                            src="{{ product.featured_image | img_url: 'large' }}" 
+                            alt="{{ product.featured_image.alt | escape }}" 
+                            class="custom-product-image"
+                            height="auto"
+                            width="auto"
+                            loading="lazy"
+                          />
+                        {% endif %}
+                      </a>
+                      <!-- Product title -->
+                      <div class="custom-product-title">
+                        <a href="{{ product.url }}">
+                          {{ product.title | escape }}
+                        </a>
+                      </div>
+                      <!-- Product price -->
+                      <div class="custom-product-price">
+                        {{ product.price | money }}
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+            
+          
+          </div>
+          
+          <div class="custom-blog-product-swiper-pagination"></div>
+        </div>
+        
+        <div class="custom-blog-product-swiper-button-prev swiper-button-prev2"></div>
+        <div class="custom-blog-product-swiper-button-next swiper-button-next2"></div>
+      </div>
+    
+      <style>
+        .custom-blog-product-swiper-section {
+          padding: 20px 0;
+          width: 100%;
+        }
+    
+        .custom-blog-product-swiper-title {
+          text-align: center;
+          margin-bottom: 20px;
+          font-size: 28px;
+          font-weight: 600;
+        }
+    
+        .custom-blog-product-swiper-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+        }
+    
+        .swiper.my-custom-blog-product-swiper {
+          width: 100%;
+          overflow: hidden;
+        }
+    
+        .swiper-slide.custom-blog-product-slide {
+          display: flex;
+          justify-content: center;
+        }
+    
+        .custom-product-item {
+          text-align: center;
+          padding: 10px;
+          box-sizing: border-box;
+        }
+    
+        .custom-product-image-link {
+          display: block;
+          margin-bottom: 10px;
+        }
+    
+        .custom-product-image {
+          max-width: 100%;
+          height: auto;
+          display: block;
+        }
+    
+        .custom-product-title {
+          font-size: 16px;
+          margin-bottom: 5px;
+        }
+        .custom-product-title a {
+          text-decoration: none;
+        }
+    
+        .custom-product-price {
+          font-size: 18px;
+          font-weight: 600;
+        }
+    
+        .custom-blog-product-swiper-button-next,
+        .custom-blog-product-swiper-button-prev {
+          color: #000;
+        }
+    
+        .custom-blog-product-swiper-pagination {
+          margin-top: 25px;
+          position: relative;
+        }
+        .swiper-pagination-bullet {
+          background: #666;
+        }
+        .swiper-pagination-bullet-active {
+          background: #3f6ba4;
+        }
+
+    
+        .custom-blog-product-swiper-button-next, .custom-blog-product-swiper-button-prev {
+          position: absolute;
+          top: 50%;
+          width: 27px;
+          height: var(--swiper-navigation-size);
+          margin-top: calc(0px - var(--swiper-navigation-size) / 2);
+          z-index: 10;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #3f6ba4;
+        }
+    
+        .custom-blog-product-swiper-button-prev {
+          left: 10px;
+        }
+        .custom-blog-product-swiper-button-next {
+          right: 10px;
+        }
+
+        
+    .custom-blog-product-swiper-button-next::after {
+    content: 'next';
+}
+        .custom-blog-product-swiper-button-prev::after {
+    content: 'prev';
+}
+
+.custom-blog-product-swiper-button-next::after, .custom-blog-product-swiper-button-prev::after {
+    font-family: swiper-icons;
+    font-size: var(--swiper-navigation-size);
+    text-transform: none !important;
+    letter-spacing: 0;
+    font-variant: initial;
+    line-height: 1;
+}
+
+    
+        @media (max-width: 768px) {
+          .custom-blog-product-swiper-button-next, .custom-blog-product-swiper-button-prev {
+            display: none;
+          }
+        }
+      </style>
+    
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var swiper = new Swiper('.my-custom-blog-product-swiper', {
+            slidesPerView: 2,
+            spaceBetween: 10,
+            loop: true,
+            pagination: {
+              el: '.custom-blog-product-swiper-pagination',
+              clickable: true,
+              dynamicBullets: true,
+            },
+            navigation: {
+              nextEl: '.custom-blog-product-swiper-button-next',
+              prevEl: '.custom-blog-product-swiper-button-prev',
+            },
+            breakpoints: {
+              576: {
+                slidesPerView: 2,
+                spaceBetween: 20
+              },
+              992: {
+                slidesPerView: 4,
+                spaceBetween: 20
+              }
+            }
+          });
+        });
+      </script>
+    </section>
+{% endif%}
+
+{% schema %}
+{
+  "name": "Blog Produktempfehlungen",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Produktempfehlungen"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Produktempfehlungen"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,486 @@
+{%- style -%}
+  {% render 'section-padding' %}
+  {% render 'section-margin' %}
+
+  .waschkids-gallery {
+    text-align: center;
+    overflow: hidden;
+    background: #f8fafc;
+  }
+
+  /* Hero Section - 3 große + 1 kleiner */
+  .gallery-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px; /* Normaler Abstand zwischen Bildern */
+    margin-bottom: 10px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-item {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    /* Automatische Anpassung an Bildgrößen */
+  }
+
+  .hero-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  }
+
+  a.hero-item {
+    cursor: pointer;
+  }
+
+  /* Spezifische Positionen für jedes Bild */
+  .hero-item:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+    aspect-ratio: 3/2; /* Für 1536x1024 Bilder */
+  }
+
+  .hero-item:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+    aspect-ratio: 3/2; /* Für 1536x1024 Bilder */
+  }
+
+  .hero-item:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+    aspect-ratio: 3/2; /* Für 1536x1024 Bilder */
+  }
+
+  .hero-item:nth-child(4) {
+    grid-column: 1;
+    grid-row: 2;
+    aspect-ratio: 1; /* Für 1024x1024 Bilder (quadratisch) */
+    margin-top: -5px; /* Bild nur leicht nach oben ziehen */
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Für die letzten 2 Bilder auf Mobile: vollständig anzeigen */
+  @media (max-width: 768px) {
+    .hero-item:nth-child(5) .hero-image,
+    .hero-item:nth-child(6) .hero-image {
+      object-fit: contain;
+      background: #f8fafc; /* Hintergrundfarbe für leere Bereiche */
+    }
+  }
+
+  /* Zustand ohne Bild */
+  .hero-item.no-image {
+    background: #f3f4f6;
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .hero-item.no-image .hero-content {
+    position: static;
+    background: none;
+    color: #1f2937;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+    padding: 30px 20px 20px;
+  }
+
+  .hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    opacity: 0.9;
+    line-height: 1.4;
+  }
+
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .gallery-hero {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+      gap: 8px;
+    }
+    
+    .hero-item:nth-child(1) {
+      grid-column: 1;
+      grid-row: 1;
+      aspect-ratio: 3/2; /* Original-Verhältnis für 1536x1024 Bilder */
+    }
+    
+    .hero-item:nth-child(2) {
+      grid-column: 2;
+      grid-row: 1;
+      aspect-ratio: 3/2; /* Original-Verhältnis für 1536x1024 Bilder */
+    }
+    
+    .hero-item:nth-child(3) {
+      grid-column: 1;
+      grid-row: 2;
+      aspect-ratio: 3/2; /* Original-Verhältnis für 1536x1024 Bilder */
+    }
+    
+    .hero-item:nth-child(4) {
+      grid-column: 2;
+      grid-row: 2;
+      aspect-ratio: 3/2; /* 3:2 Verhältnis für einheitliches Layout */
+      margin-top: 0; /* Kein margin-top auf Mobile */
+    }
+    
+    .hero-item:nth-child(5) {
+      grid-column: 1;
+      grid-row: 3;
+      aspect-ratio: 1; /* Quadratisch für bessere Passform */
+    }
+    
+    .hero-item:nth-child(6) {
+      grid-column: 2;
+      grid-row: 3;
+      aspect-ratio: 1; /* Quadratisch für bessere Passform */
+    }
+    
+    /* Kleinere Schrift auf Mobile */
+    .hero-title {
+      font-size: 16px;
+    }
+    
+    .hero-description {
+      font-size: 12px;
+    }
+    
+    .hero-content {
+      padding: 15px 10px 10px;
+    }
+  }
+
+{%- endstyle -%}
+
+<div class="waschkids-gallery{% if section.settings.full_width %} waschkids-gallery--full-width{% endif %} color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
+  
+  <!-- Hero Section: 2x2 Grid -->
+  <div class="gallery-hero">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'hero_item' -%}
+          {%- if block.settings.link != blank -%}
+            <a href="{{ block.settings.link }}" class="hero-item{% unless block.settings.image %} no-image{% endunless %}" {{ block.shopify_attributes }}>
+            {%- if block.settings.image -%}
+              <img 
+                src="{{ block.settings.image | img_url: '600x400', crop: 'center', scale: 2 }}"
+                srcset="{{ block.settings.image | img_url: '600x400', crop: 'center', scale: 1 }} 1x, {{ block.settings.image | img_url: '600x400', crop: 'center', scale: 2 }} 2x"
+                sizes="(max-width: 768px) 100vw, 580px"
+                alt="{{ block.settings.title | escape }}"
+                class="hero-image"
+                width="600"
+                height="400"
+                loading="lazy"
+                decoding="async"
+              >
+            {%- endif -%}
+              <div class="hero-content">
+                <h3 class="hero-title">{{ block.settings.title }}</h3>
+                <p class="hero-description">{{ block.settings.description }}</p>
+              </div>
+            </a>
+          {%- else -%}
+            <div class="hero-item{% unless block.settings.image %} no-image{% endunless %}" {{ block.shopify_attributes }}>
+            {%- if block.settings.image -%}
+              <img 
+                src="{{ block.settings.image | img_url: '600x400', crop: 'center', scale: 2 }}"
+                srcset="{{ block.settings.image | img_url: '600x400', crop: 'center', scale: 1 }} 1x, {{ block.settings.image | img_url: '600x400', crop: 'center', scale: 2 }} 2x"
+                sizes="(max-width: 768px) 100vw, 580px"
+                alt="{{ block.settings.title | escape }}"
+                class="hero-image"
+                width="600"
+                height="400"
+                loading="lazy"
+                decoding="async"
+              >
+            {%- endif -%}
+              <div class="hero-content">
+                <h3 class="hero-title">{{ block.settings.title }}</h3>
+                <p class="hero-description">{{ block.settings.description }}</p>
+              </div>
+            </div>
+          {%- endif -%}
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+
+</div>
+
+
+{% schema %}
+{
+  "name": "Waschkids Gallery",
+  "tag": "section",
+  "class": "spaced-section spaced-section--full-width",
+  "enabled_on": {
+    "templates": ["*"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "background-1",
+          "label": "t:sections.all.color_scheme.options__1.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.all.color_scheme.options__2.label"
+        },
+        {
+          "value": "background-3",
+          "label": "t:sections.all.color_scheme.options__3.label"
+        },
+        {
+          "value": "background-4",
+          "label": "t:sections.all.color_scheme.options__4.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.all.color_scheme.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "default": true,
+      "label": "t:sections.rich-text.settings.full_width.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.section-margin.header.content"
+    },
+    {
+      "type": "select",
+      "id": "margin_top",
+      "options": [
+        {
+          "value": "no-indent",
+          "label": "t:sections.all.section-margin.options__1.label"
+        },
+        {
+          "value": "xs",
+          "label": "t:sections.all.section-margin.options__2.label"
+        },
+        {
+          "value": "s",
+          "label": "t:sections.all.section-margin.options__3.label"
+        },
+        {
+          "value": "m",
+          "label": "t:sections.all.section-margin.options__4.label"
+        },
+        {
+          "value": "l",
+          "label": "t:sections.all.section-margin.options__5.label"
+        },
+        {
+          "value": "xl",
+          "label": "t:sections.all.section-margin.options__6.label"
+        }
+      ],
+      "default": "no-indent",
+      "label": "t:sections.all.section-margin.margin_top.label"
+    },
+    {
+      "type": "select",
+      "id": "margin_bottom",
+      "options": [
+        {
+          "value": "no-indent",
+          "label": "t:sections.all.section-margin.options__1.label"
+        },
+        {
+          "value": "xs",
+          "label": "t:sections.all.section-margin.options__2.label"
+        },
+        {
+          "value": "s",
+          "label": "t:sections.all.section-margin.options__3.label"
+        },
+        {
+          "value": "m",
+          "label": "t:sections.all.section-margin.options__4.label"
+        },
+        {
+          "value": "l",
+          "label": "t:sections.all.section-margin.options__5.label"
+        },
+        {
+          "value": "xl",
+          "label": "t:sections.all.section-margin.options__6.label"
+        }
+      ],
+      "default": "no-indent",
+      "label": "t:sections.all.section-margin.margin_bottom.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.section-padding.header.content"
+    },
+    {
+      "type": "select",
+      "id": "padding_top",
+      "options": [
+        {
+          "value": "no-indent",
+          "label": "t:sections.all.section-padding.options__1.label"
+        },
+        {
+          "value": "xs",
+          "label": "t:sections.all.section-padding.options__2.label"
+        },
+        {
+          "value": "s",
+          "label": "t:sections.all.section-padding.options__3.label"
+        },
+        {
+          "value": "m",
+          "label": "t:sections.all.section-padding.options__4.label"
+        },
+        {
+          "value": "l",
+          "label": "t:sections.all.section-padding.options__5.label"
+        },
+        {
+          "value": "xl",
+          "label": "t:sections.all.section-padding.options__6.label"
+        }
+      ],
+      "default": "xl",
+      "label": "t:sections.all.section-padding.padding_top.label"
+    },
+    {
+      "type": "select",
+      "id": "padding_bottom",
+      "options": [
+        {
+          "value": "no-indent",
+          "label": "t:sections.all.section-padding.options__1.label"
+        },
+        {
+          "value": "xs",
+          "label": "t:sections.all.section-padding.options__2.label"
+        },
+        {
+          "value": "s",
+          "label": "t:sections.all.section-padding.options__3.label"
+        },
+        {
+          "value": "m",
+          "label": "t:sections.all.section-padding.options__4.label"
+        },
+        {
+          "value": "l",
+          "label": "t:sections.all.section-padding.options__5.label"
+        },
+        {
+          "value": "xl",
+          "label": "t:sections.all.section-padding.options__6.label"
+        }
+      ],
+      "default": "xl",
+      "label": "t:sections.all.section-padding.padding_bottom.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hero_item",
+      "name": "Hero Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Hero Item"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Description for this hero item."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    },
+  ],
+  "presets": [
+    {
+      "name": "Waschkids Gallery",
+      "blocks": [
+        {
+          "type": "hero_item",
+          "settings": {
+            "title": "KOSTENLOS AB 40€ SCHNELLER VERSAND",
+            "description": "BLITZSCHNELLE LIEFERUNG DEINER LIEBLINGSPRODUKTE"
+          }
+        },
+        {
+          "type": "hero_item",
+          "settings": {
+            "title": "FRÜHLINGS GEFÜHLE",
+            "description": "STRAHLEND DURCH DEN FRÜHLING",
+            "link": "https://waschkids.de/products/koch-chemie-hand-wax-w0-01-0-175l-premium-carnaubawachs-fur-hochglanz-und-schutz?_pos=1&_psq=hand&_ss=e&_v=1.0"
+          }
+        },
+        {
+          "type": "hero_item",
+          "settings": {
+            "title": "NEUES IM SHOP",
+            "description": "FRISCH EINGETROFFEN & EINSORTIERT",
+            "link": "https://waschkids.de/products/sonax-felgenbeast-1l?_pos=1&_psq=felgenbeast&_ss=e&_v=1.0"
+          }
+        },
+        {
+          "type": "hero_item",
+          "settings": {
+            "title": "MOBILE APPS",
+            "description": "Alle Marken auf einen Blick",
+            "link": "https://waschkids.de/blogs/waschkids-magazin"
+          }
+        },
+      ]
+    }
+  ]
+}
+{% endschema %}
