@@ -1,0 +1,33 @@
+<div class="blog-selector--wrapper">
+  {% for block in section.blocks %}
+    <a href="{{ block.settings.blog.url }}" class="blog-selector--item">
+      {{ block.settings.blog.title }}
+    </a>
+  {% endfor %}
+
+  <style>
+    .blog-selector--wrapper {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 10px 0;
+    }
+
+    .blog-selector--item {
+        text-decoration: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        background: #f4f4f4;
+        color: #333;
+        font-weight: bold;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .blog-selector--item:hover {
+        background: #005888;
+        color: #fff;
+    }
+  </style>
+</div>

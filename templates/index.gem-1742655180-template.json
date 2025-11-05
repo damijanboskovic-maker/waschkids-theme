@@ -1,0 +1,355 @@
+{
+  "sections": {
+    "cards-grid": {
+      "type": "cards-grid",
+      "blocks": {
+        "block_1": {
+          "type": "column",
+          "settings": {
+            "column_start": 1,
+            "column_end": 4,
+            "row_start": "1",
+            "row_end": "3",
+            "min_height": "large",
+            "padding": "small",
+            "image": "shopify:\/\/shop_images\/gempages_499305814893265693-882ae023-6be8-4886-9f70-cb08cc368e34.png",
+            "image_size": "cover",
+            "icon_size": "cover",
+            "icon_position": "left-top",
+            "icon_background": "background-2",
+            "background_color": "#ffffff",
+            "background_effect": "none",
+            "effect_opacity": 0.4,
+            "enable_mobile_overlay": false,
+            "text_align": "top-left",
+            "text_color_scheme": "light",
+            "subheading": "",
+            "color_text": "#282828",
+            "show_subheading_dot": false,
+            "color_dot": "#40b66f",
+            "heading": "Polieren",
+            "heading_size": "h1",
+            "heading_width": 50,
+            "text": "",
+            "text_size": "small",
+            "text_width": 100,
+            "show_button": false,
+            "button_label": "Explore Our Store",
+            "button_link": "",
+            "style_button": "button button--primary button--arrow",
+            "add_button_label": "",
+            "add_button_price": "",
+            "card_link": ""
+          }
+        },
+        "block_2": {
+          "type": "column",
+          "settings": {
+            "column_start": 4,
+            "column_end": 5,
+            "row_start": "1",
+            "row_end": "3",
+            "min_height": "large",
+            "padding": "small",
+            "image": "shopify:\/\/shop_images\/gempages_499305814893265693-3c0f95e7-da18-4184-9804-94763d986913.png",
+            "image_size": "cover",
+            "icon_size": "cover",
+            "icon_position": "left-top",
+            "icon_background": "background-2",
+            "background_color": "#ffffff",
+            "background_effect": "none",
+            "effect_opacity": 0.4,
+            "enable_mobile_overlay": false,
+            "text_align": "left",
+            "text_color_scheme": "light",
+            "subheading": "Subheading",
+            "color_text": "#282828",
+            "show_subheading_dot": false,
+            "color_dot": "#40b66f",
+            "heading": "Innenraumreinigung",
+            "heading_size": "h1",
+            "heading_width": 56,
+            "text": "",
+            "text_size": "small",
+            "text_width": 100,
+            "show_button": false,
+            "button_label": "Explore Our Store",
+            "button_link": "",
+            "style_button": "button button--primary button--arrow",
+            "add_button_label": "",
+            "add_button_price": "",
+            "card_link": ""
+          }
+        },
+        "block_3": {
+          "type": "column",
+          "settings": {
+            "column_start": 1,
+            "column_end": 3,
+            "row_start": "3",
+            "row_end": "4",
+            "min_height": "large",
+            "padding": "large",
+            "image": "shopify:\/\/shop_images\/gempages_499305814893265693-6e62fbda-b2ed-499b-b561-1a5105db8154.png",
+            "image_size": "cover",
+            "icon_size": "cover",
+            "icon_position": "left-top",
+            "icon_background": "background-2",
+            "background_color": "#ffffff",
+            "background_effect": "none",
+            "effect_opacity": 0.4,
+            "enable_mobile_overlay": false,
+            "text_align": "top-left",
+            "text_color_scheme": "light",
+            "subheading": "",
+            "color_text": "#282828",
+            "show_subheading_dot": false,
+            "color_dot": "#40b66f",
+            "heading": "Außenreinigung",
+            "heading_size": "h1",
+            "heading_width": 86,
+            "text": "",
+            "text_size": "small",
+            "text_width": 100,
+            "show_button": false,
+            "button_label": "Explore Our Store",
+            "button_link": "",
+            "style_button": "button button--primary button--arrow",
+            "add_button_label": "",
+            "add_button_price": "",
+            "card_link": ""
+          }
+        },
+        "block_4": {
+          "type": "column",
+          "settings": {
+            "column_start": 3,
+            "column_end": 5,
+            "row_start": "3",
+            "row_end": "4",
+            "min_height": "large",
+            "padding": "small",
+            "image": "shopify:\/\/shop_images\/gempages_499305814893265693-b0f1500a-2b95-4761-a054-ff07fb41e046.png",
+            "image_size": "contain",
+            "icon_size": "contain",
+            "icon_position": "left-top",
+            "icon_background": "background-2",
+            "background_color": "#ffffff",
+            "background_effect": "none",
+            "effect_opacity": 0.4,
+            "enable_mobile_overlay": false,
+            "text_align": "top-left",
+            "text_color_scheme": "light",
+            "subheading": "",
+            "color_text": "#282828",
+            "show_subheading_dot": false,
+            "color_dot": "#40b66f",
+            "heading": "Versiegelung",
+            "heading_size": "h1",
+            "heading_width": 50,
+            "text": "",
+            "text_size": "small",
+            "text_width": 100,
+            "show_button": false,
+            "button_label": "Explore Our Store",
+            "button_link": "",
+            "style_button": "button button--primary button--arrow",
+            "add_button_label": "",
+            "add_button_price": "",
+            "card_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_1",
+        "block_2",
+        "block_3",
+        "block_4"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "columns": 3,
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent",
+        "padding_top": "no-indent",
+        "padding_bottom": "no-indent"
+      }
+    },
+    "categories_list_FyzpTP": {
+      "type": "categories-list",
+      "blocks": {
+        "collection_item_mRezzF": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "sonax"
+          }
+        },
+        "collection_item_MWXqFx": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "kochchemie"
+          }
+        },
+        "collection_item_ByknJ8": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "carpro"
+          }
+        },
+        "collection_item_WNBhBr": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "polytop"
+          }
+        }
+      },
+      "block_order": [
+        "collection_item_mRezzF",
+        "collection_item_MWXqFx",
+        "collection_item_ByknJ8",
+        "collection_item_WNBhBr"
+      ],
+      "custom_css": [
+        "\/* Entfernt die Titel unter den Markenlogos *\/.categories-list__item-title {display: none;}"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "heading": "Unsere Marken",
+        "image_ratio": "square",
+        "image_fit": "cover",
+        "collections_to_show": 4,
+        "padding_top": "m",
+        "padding_bottom": "m"
+      }
+    },
+    "products_grid_9m7L4U": {
+      "type": "products-grid",
+      "settings": {
+        "products_per_page": 4,
+        "columns_mobile": "2",
+        "sort": "alphabetical",
+        "heading": "Some heading",
+        "image_ratio": "square",
+        "image_fit": "cover",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_desc": true,
+        "show_sku": false,
+        "padding_top": "s",
+        "padding_bottom": "l"
+      }
+    },
+    "popular-products": {
+      "type": "popular-products",
+      "settings": {
+        "heading": "Unsere Bestseller",
+        "collection_list": [
+          "polituren"
+        ],
+        "products_limit": 6,
+        "products_to_show": 4,
+        "filter": false,
+        "filter_type": "collections",
+        "show_vendor": true,
+        "show_sku": false,
+        "image_ratio": "square",
+        "image_fit": "cover",
+        "padding_top": "m",
+        "padding_bottom": "m"
+      }
+    },
+    "multicolumn": {
+      "type": "multicolumn",
+      "blocks": {
+        "column-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/whatsapp-trusticon.webp",
+            "heading": "Kundenberatung über WhatsApp",
+            "text": ""
+          }
+        },
+        "column-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lieferung-trusticon.webp",
+            "heading": "Schnell geliefert mit DHL",
+            "text": ""
+          }
+        },
+        "column-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kauf-auf-rechnung-trusticon.webp",
+            "heading": "Kauf auf Rechnung",
+            "text": ""
+          }
+        },
+        "column-4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bewertung-trusticon.webp",
+            "heading": "Top Bewertung",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "column-1",
+        "column-2",
+        "column-3",
+        "column-4"
+      ],
+      "settings": {
+        "color_scheme": "background-2",
+        "multicolumn_to_show": 4,
+        "image_type": "image",
+        "icon_background": "no-bg",
+        "image_width": "medium",
+        "object_fit": "contain",
+        "swipe_on_mobile": true,
+        "border_top": false,
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent",
+        "padding_top": "no-indent",
+        "padding_bottom": "no-indent"
+      }
+    },
+    "featured_blog_2": {
+      "type": "featured-blog",
+      "settings": {
+        "color_scheme": "background-1",
+        "color_scheme_card": "background-2",
+        "subheading": "",
+        "heading": "Latest Articles",
+        "heading_size": "h3",
+        "post_layout": "grid",
+        "image_width": "small",
+        "image_fit": "contain",
+        "icon_background": "background-2",
+        "blog": "news",
+        "post_limit": 3,
+        "post_limit_mobile": 3,
+        "show_image": true,
+        "show_tags": true,
+        "show_date": true,
+        "show_author": true,
+        "show_excerpt": false,
+        "show_view_all": false,
+        "show_view_all_mobile": true,
+        "button_label": "Button label",
+        "button_style": "secondary",
+        "padding_top": "m",
+        "padding_bottom": "no-indent"
+      }
+    }
+  },
+  "order": [
+    "cards-grid",
+    "categories_list_FyzpTP",
+    "products_grid_9m7L4U",
+    "popular-products",
+    "multicolumn",
+    "featured_blog_2"
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "color_scheme": "dark",
+        "layout": "overlay",
+        "image": "featured_image",
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "opacity_overlay": 0,
+        "opacity_overlay_mobile": 0.7,
+        "margin_top": "no-indent",
+        "margin_bottom": "xs"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 15,
+        "columns_mobile": "1",
+        "image_ratio": "square",
+        "image_fit": "cover",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_desc": false,
+        "show_sku": false,
+        "enable_filtering": true,
+        "default_open": true,
+        "enable_sorting": true,
+        "image_filter_ratio": "4\/5",
+        "image_filter_fit": "cover",
+        "image_filter_columns": 2,
+        "padding_top": "no-indent",
+        "padding_bottom": "m"
+      }
+    },
+    "collapsible_content_9XUc6X": {
+      "type": "collapsible-content",
+      "blocks": {
+        "accordion_TqD3WW": {
+          "type": "accordion",
+          "settings": {
+            "question": "{{ collection.metafields.custom.cpollection_q1.value }}",
+            "answer": "<p>{{ collection.metafields.custom.collection_a1 | metafield_tag }}<\/p>",
+            "opened": true
+          }
+        },
+        "accordion_cUNtj6": {
+          "type": "accordion",
+          "settings": {
+            "question": "{{ collection.metafields.custom.collection_tab2.value }}",
+            "answer": "<p>{{ collection.metafields.custom.collection_text2 | metafield_tag }}<\/p>",
+            "opened": false
+          }
+        },
+        "accordion_36HGVf": {
+          "type": "accordion",
+          "settings": {
+            "question": "{{ collection.metafields.custom.collection_tab3.value }}",
+            "answer": "<p>{{ collection.metafields.custom.collection_text3 | metafield_tag }}<\/p>",
+            "opened": false
+          }
+        }
+      },
+      "block_order": [
+        "accordion_TqD3WW",
+        "accordion_cUNtj6",
+        "accordion_36HGVf"
+      ],
+      "settings": {
+        "heading": "{{ collection.metafields.custom.collection_header_zu_collapsible_content.value }}",
+        "heading_size": "h2",
+        "text": "",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent",
+        "padding_top": "m",
+        "padding_bottom": "m"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "collapsible_content_9XUc6X"
+  ]
+}
