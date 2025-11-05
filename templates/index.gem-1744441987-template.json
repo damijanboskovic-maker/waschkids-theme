@@ -1,0 +1,577 @@
+{
+  "sections": {
+    "college_grid_acRXtP": {
+      "type": "college-grid",
+      "blocks": {
+        "image_F3rC6y": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gempages_499305814893265693-882ae023-6be8-4886-9f70-cb08cc368e34.png",
+            "text": "Polieren",
+            "link": "shopify:\/\/collections\/polieren",
+            "width": 65
+          }
+        },
+        "image_rYrtda": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gempages_499305814893265693-3c0f95e7-da18-4184-9804-94763d986913.png",
+            "text": "Innenraumreinigung",
+            "link": "shopify:\/\/collections\/innenraum",
+            "width": 35
+          }
+        },
+        "image_rtyLkU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gempages_499305814893265693-6e62fbda-b2ed-499b-b561-1a5105db8154.png",
+            "text": "Außenreinigung",
+            "link": "shopify:\/\/collections\/aussenreinigung",
+            "width": 35
+          }
+        },
+        "image_KJQ6dc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gempages_499305814893265693-b0f1500a-2b95-4761-a054-ff07fb41e046.png",
+            "text": "Versiegelung",
+            "link": "shopify:\/\/collections\/versiegeln-pflegen",
+            "width": 65
+          }
+        }
+      },
+      "block_order": [
+        "image_F3rC6y",
+        "image_rYrtda",
+        "image_rtyLkU",
+        "image_KJQ6dc"
+      ],
+      "settings": {
+        "text_color": "#ffffff"
+      }
+    },
+    "cards_grid_HeyiVb": {
+      "type": "cards-grid",
+      "blocks": {
+        "column_eTCnUa": {
+          "type": "column",
+          "settings": {
+            "column_start": 1,
+            "column_end": 4,
+            "row_start": "1",
+            "row_end": "4",
+            "min_height": "large",
+            "padding": "small",
+            "image": "shopify:\/\/shop_images\/gempages_499305814893265693-882ae023-6be8-4886-9f70-cb08cc368e34.png",
+            "image_size": "cover",
+            "icon_size": "cover",
+            "icon_position": "left-top",
+            "icon_background": "background-2",
+            "background_color": "#ffffff",
+            "background_effect": "none",
+            "effect_opacity": 0.4,
+            "enable_mobile_overlay": false,
+            "text_align": "bottom-left",
+            "text_color_scheme": "dark",
+            "subheading": "",
+            "color_text": "#282828",
+            "show_subheading_dot": false,
+            "color_dot": "#40b66f",
+            "heading": "Polieren",
+            "heading_size": "h3",
+            "heading_width": 50,
+            "text": "",
+            "text_size": "small",
+            "text_width": 100,
+            "show_button": false,
+            "button_label": "Explore Our Store",
+            "button_link": "",
+            "style_button": "button button--primary button--arrow",
+            "add_button_label": "",
+            "add_button_price": "",
+            "card_link": "shopify:\/\/collections\/polieren"
+          }
+        },
+        "column_f7EAWc": {
+          "type": "column",
+          "settings": {
+            "column_start": 4,
+            "column_end": 5,
+            "row_start": "1",
+            "row_end": "4",
+            "min_height": "large",
+            "padding": "small",
+            "image": "shopify:\/\/shop_images\/gempages_499305814893265693-3c0f95e7-da18-4184-9804-94763d986913.png",
+            "image_size": "cover",
+            "icon_size": "cover",
+            "icon_position": "left-top",
+            "icon_background": "background-2",
+            "background_color": "#ffffff",
+            "background_effect": "none",
+            "effect_opacity": 0.4,
+            "enable_mobile_overlay": false,
+            "text_align": "bottom-left",
+            "text_color_scheme": "dark",
+            "subheading": "",
+            "color_text": "#282828",
+            "show_subheading_dot": false,
+            "color_dot": "#40b66f",
+            "heading": "Innenraumreinigung",
+            "heading_size": "h3",
+            "heading_width": 50,
+            "text": "",
+            "text_size": "small",
+            "text_width": 100,
+            "show_button": false,
+            "button_label": "Explore Our Store",
+            "button_link": "",
+            "style_button": "button button--primary button--arrow",
+            "add_button_label": "",
+            "add_button_price": "",
+            "card_link": "shopify:\/\/collections\/innenraum"
+          }
+        },
+        "column_dEj3fw": {
+          "type": "column",
+          "settings": {
+            "column_start": 1,
+            "column_end": 2,
+            "row_start": "4",
+            "row_end": "unset",
+            "min_height": "large",
+            "padding": "small",
+            "image": "shopify:\/\/shop_images\/gempages_499305814893265693-6e62fbda-b2ed-499b-b561-1a5105db8154.png",
+            "image_size": "cover",
+            "icon_size": "cover",
+            "icon_position": "left-top",
+            "icon_background": "background-2",
+            "background_color": "#ffffff",
+            "background_effect": "none",
+            "effect_opacity": 0.4,
+            "enable_mobile_overlay": false,
+            "text_align": "bottom-left",
+            "text_color_scheme": "dark",
+            "subheading": "",
+            "color_text": "#282828",
+            "show_subheading_dot": false,
+            "color_dot": "#40b66f",
+            "heading": "Außenreinigung",
+            "heading_size": "h3",
+            "heading_width": 50,
+            "text": "",
+            "text_size": "small",
+            "text_width": 100,
+            "show_button": false,
+            "button_label": "Explore Our Store",
+            "button_link": "",
+            "style_button": "button button--primary button--arrow",
+            "add_button_label": "",
+            "add_button_price": "",
+            "card_link": "shopify:\/\/collections\/aussenreinigung"
+          }
+        },
+        "column_mrexGE": {
+          "type": "column",
+          "settings": {
+            "column_start": 2,
+            "column_end": 5,
+            "row_start": "unset",
+            "row_end": "unset",
+            "min_height": "large",
+            "padding": "small",
+            "image": "shopify:\/\/shop_images\/gempages_499305814893265693-b0f1500a-2b95-4761-a054-ff07fb41e046.png",
+            "image_size": "cover",
+            "icon_size": "cover",
+            "icon_position": "left-top",
+            "icon_background": "background-2",
+            "background_color": "#ffffff",
+            "background_effect": "none",
+            "effect_opacity": 0.4,
+            "enable_mobile_overlay": false,
+            "text_align": "bottom-left",
+            "text_color_scheme": "dark",
+            "subheading": "",
+            "color_text": "#282828",
+            "show_subheading_dot": false,
+            "color_dot": "#40b66f",
+            "heading": "Versiegelung",
+            "heading_size": "h3",
+            "heading_width": 50,
+            "text": "",
+            "text_size": "small",
+            "text_width": 100,
+            "show_button": false,
+            "button_label": "Explore Our Store",
+            "button_link": "",
+            "style_button": "button button--primary button--arrow",
+            "add_button_label": "",
+            "add_button_price": "",
+            "card_link": "shopify:\/\/collections\/versiegeln-pflegen"
+          }
+        }
+      },
+      "block_order": [
+        "column_eTCnUa",
+        "column_f7EAWc",
+        "column_dEj3fw",
+        "column_mrexGE"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".cards-grid__info h2 {background-color: rgba( 255, 255, 255, 0.6 ); \/* Schwarz (0) (weiß wäre 255) mit 30% Transparenz *\/ padding: 0.5rem 1rem; border-radius: 5px; display: inline-block;}"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "columns": 4,
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent",
+        "padding_top": "no-indent",
+        "padding_bottom": "no-indent"
+      }
+    },
+    "products_grid_wzx6fB": {
+      "type": "products-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 5,
+        "columns_mobile": "2",
+        "sort": "date",
+        "heading": "Unsere Bestseller",
+        "image_ratio": "landscape",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_desc": false,
+        "show_sku": false,
+        "padding_top": "s",
+        "padding_bottom": "l"
+      }
+    },
+    "featured_products_gkxtWD": {
+      "type": "featured-products",
+      "settings": {
+        "color_scheme": "background-1",
+        "subheading": "",
+        "heading": "Unsere Bestseller",
+        "heading_size": "h2",
+        "show_info": false,
+        "info_subheading": "Subheading",
+        "info_heading": "Heading",
+        "info_heading_size": "h2",
+        "text": "Some description",
+        "show_button": false,
+        "button_style": "primary",
+        "button_label": "Explore Our Store",
+        "button_link": "",
+        "product_list": [
+          "1k-nano-koch-chemie",
+          "koch-chemie-active-foam-10kg",
+          "koch-chemie-allround-surface-cleaner-10l-allzweckreiniger-kopie",
+          "koch-chemie-auto-shampoo-10l-reiningungsshampoo",
+          "koch-chemie-cabriodachversiegelung",
+          "koch-chemie-allround-surface-cleaner-0-5l-allzweckreiniger"
+        ],
+        "columns_mobile": "2",
+        "image_ratio": "square",
+        "image_fit": "cover",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_desc": false,
+        "show_sku": false,
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent",
+        "padding_top": "m",
+        "padding_bottom": "m"
+      }
+    },
+    "unsere_marken_XqGPBt": {
+      "type": "unsere-marken",
+      "blocks": {
+        "brand_mAbxkW": {
+          "type": "brand",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Sonax_Logo.png",
+            "link": "shopify:\/\/collections\/sonax",
+            "alt": "Markenlogo"
+          }
+        },
+        "brand_xhcfpa": {
+          "type": "brand",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Koch_Chemie_Logo.png",
+            "link": "shopify:\/\/collections\/kochchemie",
+            "alt": "Markenlogo"
+          }
+        },
+        "brand_CTfpF8": {
+          "type": "brand",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/CarPro_Logo.png",
+            "link": "shopify:\/\/collections\/carpro",
+            "alt": "Markenlogo"
+          }
+        },
+        "brand_LpkHrx": {
+          "type": "brand",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Polytop_Logo.png",
+            "link": "shopify:\/\/collections\/polytop",
+            "alt": "Markenlogo"
+          }
+        }
+      },
+      "block_order": [
+        "brand_mAbxkW",
+        "brand_xhcfpa",
+        "brand_CTfpF8",
+        "brand_LpkHrx"
+      ],
+      "settings": {
+        "heading": "Unsere Marken"
+      }
+    },
+    "bundle_feature_collection_jNmJwn": {
+      "type": "bundle-feature-collection",
+      "blocks": {
+        "product_iTNhMV": {
+          "type": "product",
+          "settings": {
+            "product": "1k-nano-koch-chemie"
+          }
+        },
+        "product_rxh8aF": {
+          "type": "product",
+          "settings": {
+            "product": "koch-chemie-active-foam-10kg"
+          }
+        },
+        "product_wjpJTA": {
+          "type": "product",
+          "settings": {
+            "product": "koch-chemie-allround-surface-cleaner-10l-allzweckreiniger-kopie"
+          }
+        },
+        "product_nHRMbH": {
+          "type": "product",
+          "settings": {
+            "product": "koch-chemie-finish-spray-exterior-1l-schnellglanz-fur-aussenflachen"
+          }
+        },
+        "product_34kbEK": {
+          "type": "product",
+          "settings": {
+            "product": "koch-chemie-glanzwachsshampoo-10kg-shampoo"
+          }
+        },
+        "product_aRQKcn": {
+          "type": "product",
+          "settings": {
+            "product": "koch-chemie-flugrostentferner-bmp-12kg-saure-reiniger-fur-anorganische-verschmutzungen"
+          }
+        }
+      },
+      "block_order": [
+        "product_iTNhMV",
+        "product_rxh8aF",
+        "product_wjpJTA",
+        "product_nHRMbH",
+        "product_34kbEK",
+        "product_aRQKcn"
+      ],
+      "settings": {
+        "bg_color": "#3a3f42",
+        "image": "shopify:\/\/shop_images\/Screenshot_1_cleanup.png",
+        "heading": "WHEEL CLEANING SET",
+        "content": "<p>Lorem Ipsum<strong> <\/strong>is simply dummy text of the printing and Atypesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.<\/p>",
+        "text_color": "#FFFFFF",
+        "btn_name": "ADD BUNDLE TO CART",
+        "btn_bg_color": "#FFFFFF",
+        "btn_text_color": "#000000"
+      }
+    },
+    "multicolumn_images_Tnzrkg": {
+      "type": "multicolumn-images",
+      "blocks": {
+        "image_RLqawf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Bildschirmfoto_2025-03-24_um_13.34.17.png",
+            "width": 20,
+            "width_mobile": 50
+          }
+        },
+        "image_gDAH34": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Bildschirmfoto_2025-03-24_um_13.34.17.png",
+            "width": 20,
+            "width_mobile": 50
+          }
+        },
+        "image_LLmajK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/carwash.jpg",
+            "width": 20,
+            "width_mobile": 100
+          }
+        },
+        "image_8FhrX3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Bildschirmfoto_2025-03-24_um_13.34.17.png",
+            "width": 20,
+            "width_mobile": 50
+          }
+        },
+        "image_NdbNKA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Bildschirmfoto_2025-03-24_um_13.34.17.png",
+            "width": 20,
+            "width_mobile": 50
+          }
+        }
+      },
+      "block_order": [
+        "image_RLqawf",
+        "image_gDAH34",
+        "image_LLmajK",
+        "image_8FhrX3",
+        "image_NdbNKA"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "heading": "Comics",
+        "heading_size": "h2",
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent",
+        "padding_top": "m",
+        "padding_bottom": "m"
+      }
+    },
+    "17427258718c4ca1d6": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_featured_carousel_3nz6UD": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/featured_carousel\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "maxwidth": 1400
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_featured_carousel_3nz6UD"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "multicolumn": {
+      "type": "multicolumn",
+      "blocks": {
+        "column-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/499305814893265693-bf75f21a-1857-4ee2-abf0-baa118802cb2.webp",
+            "image_2": "shopify:\/\/shop_images\/whatsapp-trusticon.webp",
+            "heading": "Kundenberatung über Whatsapp",
+            "text": ""
+          }
+        },
+        "column-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lieferung-trusticon.webp",
+            "heading": "Schnell geliefert mit DHL",
+            "text": ""
+          }
+        },
+        "column-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kauf-auf-rechnung-trusticon.webp",
+            "heading": "Kauf auf Rechnung",
+            "text": ""
+          }
+        },
+        "column-4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bewertung-trusticon.webp",
+            "heading": "Top Bewertung",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "column-1",
+        "column-2",
+        "column-3",
+        "column-4"
+      ],
+      "custom_css": [
+        ".multicolumn {background-color: #3f6ba4;}",
+        ".multicolumn-card__heading {text-align: center; color: #fff;}",
+        ".multicolumn-card__image-wrapper {align-self: center;}",
+        ".multicolumn-card {flex-direction: column; justify-content: center; align-items: center;}",
+        ".multicolumn-list__item:not(:first-child) {border: 0;}"
+      ],
+      "settings": {
+        "color_scheme": "background-2",
+        "multicolumn_to_show": 4,
+        "image_type": "image",
+        "icon_background": "no-bg",
+        "image_width": "medium",
+        "object_fit": "contain",
+        "swipe_on_mobile": false,
+        "border_top": false,
+        "margin_top": "no-indent",
+        "margin_bottom": "no-indent",
+        "padding_top": "s",
+        "padding_bottom": "s"
+      }
+    },
+    "featured_blog_2": {
+      "type": "featured-blog",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-1",
+        "color_scheme_card": "background-2",
+        "subheading": "",
+        "heading": "Latest Articles",
+        "heading_size": "h3",
+        "post_layout": "grid",
+        "image_width": "small",
+        "image_fit": "contain",
+        "icon_background": "background-2",
+        "blog": "news",
+        "post_limit": 3,
+        "post_limit_mobile": 3,
+        "show_image": true,
+        "show_tags": true,
+        "show_date": true,
+        "show_author": true,
+        "show_excerpt": false,
+        "show_view_all": false,
+        "show_view_all_mobile": true,
+        "button_label": "Button label",
+        "button_style": "secondary",
+        "padding_top": "m",
+        "padding_bottom": "no-indent"
+      }
+    }
+  },
+  "order": [
+    "college_grid_acRXtP",
+    "cards_grid_HeyiVb",
+    "products_grid_wzx6fB",
+    "featured_products_gkxtWD",
+    "unsere_marken_XqGPBt",
+    "bundle_feature_collection_jNmJwn",
+    "multicolumn_images_Tnzrkg",
+    "17427258718c4ca1d6",
+    "multicolumn",
+    "featured_blog_2"
+  ]
+}
